@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Віртуальна лабораторія GIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/main.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/font-awesome.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/rainbows.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/admin.css" type="text/css" charset="utf-8">
+</head>
+<body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-6 col-md-5 col-lg-4 mr-0" href="#">Віртуальна лабораторія GIT</a>
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Пошук" aria-label="Пошук">
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="/Home/Index">Вихід</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <span data-feather="home"></span>
+                                Конструювання <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file"></span>
+                                Моделювання
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="shopping-cart"></span>
+                                Проектування
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Аналіз вимог
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Тестування
+                            </a>
+                        </li>
+                    </ul>
+                    <br>
+                    <br>
+                    <br>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Результати
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Особистий кабінет
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <h1 class="h2">Конструювання</h1>
+                <div class="inside">
+                    <div class="levelDropdownView box vertical">
+                        <div class="box horizontal center levelDropdownTabWrapper">
+
+
+                            <div class="levelDropdownTab" data-id="main">
+
+                                <span data-id="main">
+                                    Основи
+                                </span>
+                            </div>
+
+
+                            <div class="levelDropdownTab deselected" data-id="remote">
+
+                                <span data-id="remote">
+                                    Віддалені репозиторії
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="seriesView box flex1 vertical">
+                            <div class="displayName">
+                                <h3> Вступ </h3>
+                            </div>
+                            <p class="about">
+                                Добре підібране введення в основні команди git
+                            </p>
+                            <p class="levelInfo">1: Знайомство с Git Commit</p>
+                            <div class="iconHolder box horizontal">
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-intro1" data-id="intro1" onclick="window.location.href='/TasksInfo/TaskInfo'">
+                                    <div class="index box" data-id="intro1">
+                                        <i class="icon-ok-circle" data-id="intro1"></i>
+                                        <div class="indexNum" data-id="intro1">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-intro2" data-id="intro2" onclick="window.location.href='/TasksInfo/TaskInfo'">
+                                    <div class="index box" data-id="intro2">
+                                        <i class="icon-ok-circle" data-id="intro2"></i>
+                                        <div class="indexNum" data-id="intro2">
+                                            2
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-intro3" data-id="intro3" onclick="window.location.href='/TasksInfo/TaskInfo'">
+                                    <div class="index box" data-id="intro3">
+                                        <i class="icon-ok-circle" data-id="intro3"></i>
+                                        <div class="indexNum" data-id="intro3">
+                                            3
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-intro4" data-id="intro4" onclick="window.location.href='/TasksInfo/Task2Info'">
+                                    <div class="index box" data-id="intro4">
+                                        <i class="icon-ok-circle" data-id="intro4"></i>
+                                        <div class="indexNum" data-id="intro4">
+                                            4
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="seriesView box flex1 vertical">
+                            <div class="displayName">
+                                <h3> Їдемо далі </h3>
+                            </div>
+                            <p class="about">
+                                Наступна порція класних git-команд.
+                            </p>
+                            <p class="levelInfo">
+                                1: Втрачаємо голову або detached HEAD
+                            </p>
+                            <div class="iconHolder box horizontal">
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-rampup1" data-id="rampup1" onclick="window.location.href='/TasksInfo/TaskInfo'">
+                                    <div class="index box" data-id="rampup1">
+                                        <i class="icon-ok-circle" data-id="rampup1"></i>
+                                        <div class="indexNum" data-id="rampup1">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-rampup2" data-id="rampup2" onclick="window.location.href='/TasksInfo/TaskInfo'">
+                                    <div class="index box" data-id="rampup2">
+                                        <i class="icon-ok-circle" data-id="rampup2"></i>
+                                        <div class="indexNum" data-id="rampup2">
+                                            2
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-rampup3" data-id="rampup3" onclick="window.location.href='/TasksInfo/TaskInfo'">
+                                    <div class="index box" data-id="rampup3">
+                                        <i class="icon-ok-circle" data-id="rampup3"></i>
+                                        <div class="indexNum" data-id="rampup3">
+                                            3
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-rampup4" data-id="rampup4" onclick="window.location.href='/TasksInfo/Task2Info'">
+                                    <div class="index box" data-id="rampup4">
+                                        <i class="icon-ok-circle" data-id="rampup4"></i>
+                                        <div class="indexNum" data-id="rampup4">
+                                            4
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="seriesView box flex1 vertical">
+                            <div class="displayName">
+                                <h3> Переміщаємо напрацювання туди-сюди </h3>
+                            </div>
+                            <p class="about">
+                                Не соромтесь змінювати історію
+                            </p>
+                            <p class="levelInfo">
+                                1: Вступ в Cherry-pick
+                            </p>
+                            <div class="iconHolder box horizontal">
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-move1" data-id="move1" onclick="window.location.href='/TasksInfo/TaskInfo'">
+                                    <div class="index box" data-id="move1">
+                                        <i class="icon-ok-circle" data-id="move1"></i>
+                                        <div class="indexNum" data-id="move1">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-move2" data-id="move2" onclick="window.location.href='/TasksInfo/Task2Info'">
+                                    <div class="index box" data-id="move2">
+                                        <i class="icon-ok-circle" data-id="move2"></i>
+                                        <div class="indexNum" data-id="move2">
+                                            2
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="seriesView box flex1 vertical">
+                            <div class="displayName">
+                                <h3> Всього по трохи </h3>
+                            </div>
+                            <p class="about">
+                                Асорті з прийомів работи з Git, хитрощів і порад
+                            </p>
+                            <p class="levelInfo">
+                                1: Оберемо один коміт.
+                            </p>
+                            <div class="iconHolder box horizontal">
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-mixed1" data-id="mixed1" onclick="window.location.href='/TasksInfo/TaskInfo'">
+                                    <div class="index box" data-id="mixed1">
+                                        <i class="icon-ok-circle" data-id="mixed1"></i>
+                                        <div class="indexNum" data-id="mixed1">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-mixed2" data-id="mixed2" onclick="window.location.href='/TasksInfo/TaskInfo'">
+                                    <div class="index box" data-id="mixed2">
+                                        <i class="icon-ok-circle" data-id="mixed2"></i>
+                                        <div class="indexNum" data-id="mixed2">
+                                            2
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-mixed3" data-id="mixed3" onclick="window.location.href='/TasksInfo/TaskInfo'">
+                                    <div class="index box" data-id="mixed3">
+                                        <i class="icon-ok-circle" data-id="mixed3"></i>
+                                        <div class="indexNum" data-id="mixed3">
+                                            3
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-mixed4" data-id="mixed4" onclick="window.location.href='/TasksInfo/TaskInfo'">
+                                    <div class="index box" data-id="mixed4">
+                                        <i class="icon-ok-circle" data-id="mixed4"></i>
+                                        <div class="indexNum" data-id="mixed4">
+                                            4
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-mixed5" data-id="mixed5" onclick="window.location.href='/TasksInfo/Task2Info'">
+                                    <div class="index box" data-id="mixed5">
+                                        <i class="icon-ok-circle" data-id="mixed5"></i>
+                                        <div class="indexNum" data-id="mixed5">
+                                            5
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="seriesView box flex1 vertical">
+                            <div class="displayName">
+                                <h3> Просунутий рівень </h3>
+                            </div>
+                            <p class="about">
+                                Якщо ти сміливий, спритний, вправний – потренуйся тут
+                            </p>
+                            <p class="levelInfo">
+                                1: Rebase over 9000 раз
+                            </p>
+                            <div class="iconHolder box horizontal">
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-advanced1" data-id="advanced1" onclick="window.location.href='/TasksInfo/TaskInfo'">
+                                    <div class="index box" data-id="advanced1">
+                                        <i class="icon-ok-circle" data-id="advanced1"></i>
+                                        <div class="indexNum" data-id="advanced1">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-advanced2" data-id="advanced2" onclick="window.location.href='/TasksInfo/TaskInfo'">
+                                    <div class="index box" data-id="advanced2">
+                                        <i class="icon-ok-circle" data-id="advanced2"></i>
+                                        <div class="indexNum" data-id="advanced2">
+                                            2
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="levelIcon box center centerAlign vertical" id="levelIcon-advanced3" data-id="advanced3" onclick="window.location.href='/TasksInfo/Task2Info'">
+                                    <div class="index box" data-id="advanced3">
+                                        <i class="icon-ok-circle" data-id="advanced3"></i>
+                                        <div class="indexNum" data-id="advanced3">
+                                            3
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

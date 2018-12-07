@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Віртуальна лабораторія GIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/main.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/font-awesome.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/rainbows.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/login.css" type="text/css" charset="utf-8">
+</head>
+<body id="LoginForm" class="admin">
+    <div class="container">
+        <h1 class="form-heading">
+            Для викладачів <br>
+            Віртуальна лабораторія системи контролю версій GIT
+        </h1>
+        <div class="login-form">
+            <div class="main-div">
+                <div class="panel">
+                    <h2>Вхід</h2>
+                    <p>Будь ласка введіть свій логін та пароль</p>
+                </div>
+                <form id="Login" action="/Home/Admin" method="GET">
+
+                    <div class="form-group">
+
+
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+
+                    </div>
+                    <div class="forgot">
+                        <a href="#">забули пароль?</a>
+                        <a href="/Home/Index" style="float:right">cтудент?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary blue">Увійти</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -13,17 +13,18 @@ namespace VirualLab.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult AdminLogin()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Student()
         {
-            ViewBag.Message = "Your contact page.";
+            return View();
+        }
 
+        public ActionResult Admin()
+        {
             return View();
         }
     }

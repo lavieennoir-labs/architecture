@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Віртуальна лабораторія GIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/main.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/font-awesome.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/rainbows.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/admin.css" type="text/css" charset="utf-8">
+</head>
+<body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-6 col-md-5 col-lg-4 mr-0" href="/Home/Student">Віртуальна лабораторія GIT</a>
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Пошук" aria-label="Пошук">
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="/Home/Index">Вихід</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="modalView box horizontal center transitionOpacityLinear inFront show">
+        <div class="contentHolder box vertical center flex1">
+            <div class="modalTerminal box flex1">
+                <div class="terminal-window box horizontal flex3 transitionAll">
+                    <div class="box flex3">
+                    </div>
+                    <div class="terminal-window-holder box flex10 vertical transitionTransform">
+                        <div class="wrapper box vertical fullscreen">
+                            <div class="toolbar box vertical center">
+                                <div class="controls box horizontal justify">
+                                    <div class="box flex1">
+                                        <div class="close">
+                                        </div>
+                                    </div>
+                                    <div class="box flex1">
+                                        <div class="minimize">
+                                        </div>
+                                    </div>
+                                    <div class="box flex1">
+                                        <div class="plus">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="inside centered">
+                                <div>
+                                    <h2>Коміти в GIT</h2>
+
+                                    <p>Комміт в git репозиторії зберігає знімок всіх файлів в директорії. Майже як величезна копія, тільки краще</p>
+
+                                    <p>Git намагається бути легким і швидким наскільки це тільки можливо, так що він не просто сліпо копіює всю директорію кожен раз, а утискає (коли це можливо) коміт в набір змін або «дельту» між поточною версією і попередньою.</p>
+
+                                    <p>Також Git зберігає всю історію про те, коли який коміт був зроблений. Ось чому більшість комітів мають попередників - ми вказуємо на попередній коміт стрілками при візуалізації. Підтримка історії комітів більш ніж важлива для всіх, хто працює над проектом!</p>
+
+                                    <p>Можна ще довго розповідати про коміти, але для простоти будемо вважати їх повними знімками проекту. Коміти дуже легкі, так що перемикання між ними відбувається максимально швидко!</p>
+                                </div><div class="leftRightView box horizontal center">
+
+
+                                    <div class="box exit">
+                                        <i class="icon-signout" onclick="window.location.href='/Home/Student'"></i>
+
+                                    </div>
+                                    <div class="box right">
+
+                                        <i class="icon-circle-arrow-right" onclick="window.location.href='/TasksInfo/TaskInfo1'"></i>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box flex2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

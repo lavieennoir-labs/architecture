@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Віртуальна лабораторія GIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/main.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/font-awesome.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/rainbows.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/admin.css" type="text/css" charset="utf-8">
+</head>
+<body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-6 col-md-5 col-lg-4 mr-0" href="/Home/Student">Віртуальна лабораторія GIT</a>
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Пошук" aria-label="Пошук">
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="/Home/Index">Вихід</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="modalView box horizontal center transitionOpacityLinear inFront show">
+        <div class="contentHolder box vertical center flex1">
+            <div class="modalTerminal box flex1">
+                <div class="terminal-window box horizontal flex3 transitionAll">
+                    <div class="terminal-window-holder box flex10 vertical transitionTransform">
+                        <div class="wrapper box vertical fullscreen">
+                            <div class="toolbar box vertical center">
+                                <div class="controls box horizontal justify">
+                                    <div class="box flex1">
+                                        <div class="close" onclick="window.location.href='/Tasks/Input2'" style="cursor: pointer;">
+                                        </div>
+                                    </div>
+                                    <div class="box flex1">
+                                        <div class="minimize">
+                                        </div>
+                                    </div>
+                                    <div class="box flex1">
+                                        <div class="plus">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <i class="icon-cog"></i>
+                                    Ціль уровня
+                                </div>
+                            </div>
+                            <div class="terminal-text" style=" background: #5cbcfc; padding: 0 8px; color: black; font-size: 1.5rem;height: 100%;">
+                                <p class="helperText">
+                                    Cтвори гілку з ім'ям bugFix і переключись на неї.
+                                </p>
+                                <div style="text-align: center;">
+                                    <svg height="484" version="1.1" width="499" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden;  opacity: 1;"><path fill="#333333" stroke="#333333" d="M250,192C250,142,250,95,250,45L242,53L258,53L250,45C250,95,250,142,250,192" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); stroke-linecap: round; stroke-linejoin: round; opacity: 1;" opacity="1"></path><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><circle cx="249.5" cy="25.5" r="17" fill="#ff66af" stroke="#ffffff" opacity="1" stroke-width="2" stroke-dasharray="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1;"></circle><text x="249.5" y="25.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 12px Monaco, Courier, font-monospace; opacity: 1;" font-size="12px" font-weight="bold" font-family="Monaco, Courier, font-monospace" opacity="1"><tspan dy="2.8125" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">C0</tspan></text><circle cx="249.5" cy="208.60000610351562" r="17" fill="#ff66af" stroke="#ffffff" opacity="1" stroke-width="2" stroke-dasharray="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1;"></circle><text x="249.5" y="208.60000610351562" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 12px Monaco, Courier, font-monospace; opacity: 1;" font-size="12px" font-weight="bold" font-family="Monaco, Courier, font-monospace" opacity="1"><tspan dy="2.803131103515625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">C1</tspan></text><path fill="#ff66af" stroke="#ffffff" d="M323,201L274,201L274,195L260,209L274,223L274,217L323,217Z" opacity="1" transform="matrix(0.8192,-0.5736,0.5736,0.8192,-69.1603,184.9948)" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer;"></path><rect x="285.8515625" y="160.60000610351562" width="68.796875" height="54" r="8" rx="8" ry="8" fill="#ff66af" stroke="#ffffff" opacity="1" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer;"></rect><text x="320.25" y="175.60000610351562" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 14px Monaco, Courier, font-monospace; opacity: 1; cursor: pointer;" font-size="14px" font-family="Monaco, Courier, font-monospace" opacity="1"><tspan dy="4.006256103515625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">master</tspan></text><path fill="#ff668d" stroke="#ffffff" d="M323,201L274,201L274,195L260,209L274,223L274,217L323,217Z" opacity="0" transform="matrix(0.8192,-0.5736,0.5736,0.8192,-69.1603,184.9948)" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0; cursor: pointer;"></path><rect x="285.8515625" y="180.60000610351562" width="68.796875" height="54" r="8" rx="8" ry="8" fill="#ff668d" stroke="#ffffff" opacity="0" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0; cursor: pointer;"></rect><path fill="#2831ff" stroke="#ffffff" d="M177,201L226,201L226,195L240,209L226,223L226,217L177,217Z" opacity="0" transform="matrix(0.8192,-0.5736,0.5736,0.8192,-80.1707,177.3879)" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0; cursor: auto;"></path><rect x="156.75" y="228.60000610351562" width="44" height="27.6" r="8" rx="8" ry="8" fill="#2831ff" stroke="#ffffff" opacity="0" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0; cursor: auto;"></rect><text x="178.75" y="241.60000610351562" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 14px Monaco, Courier, font-monospace; opacity: 0; cursor: auto;" font-size="14px" font-family="Monaco, Courier, font-monospace" opacity="0"><tspan dy="4.006256103515625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">HEAD</tspan></text><text x="320.25" y="195.60000610351562" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 14px Monaco, Courier, font-monospace; opacity: 1; cursor: pointer;" font-size="14px" font-family="Monaco, Courier, font-monospace" opacity="1"><tspan dy="4.006256103515625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">bugFix*</tspan></text></svg>
+                                </div>
+                            </div>
+                            <div class="inside box flex1">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

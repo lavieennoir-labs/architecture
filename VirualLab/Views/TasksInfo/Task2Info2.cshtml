@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Віртуальна лабораторія GIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/main.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/font-awesome.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/rainbows.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/admin.css" type="text/css" charset="utf-8">
+</head>
+<body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-6 col-md-5 col-lg-4 mr-0" href="/Home/Student">Віртуальна лабораторія GIT</a>
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Пошук" aria-label="Пошук">
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="/Home/Index">Вихід</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="modalView box horizontal center transitionOpacityLinear inFront show">
+        <div class="contentHolder box vertical center flex1">
+            <div class="modalTerminal box flex1">
+                <div class="terminal-window box horizontal flex3 transitionAll">
+                    <div class="terminal-window-holder box flex10 vertical transitionTransform">
+                        <div class="wrapper box vertical fullscreen">
+                            <div class="toolbar box vertical center">
+                                <div class="controls box horizontal justify">
+                                    <div class="box flex1">
+                                        <div class="close">
+                                        </div>
+                                    </div>
+                                    <div class="box flex1">
+                                        <div class="minimize">
+                                        </div>
+                                    </div>
+                                    <div class="box flex1">
+                                        <div class="plus">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <i class="icon-cog"></i>
+                                    <span class="modal-title">
+                                        Git демо
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <div class="inside">
+                                <div class="gitDemonstrationView box horizontal demonstrated">
+                                    <div class="demonstrationText box vertical">
+                                        <div class="beforeText">
+                                            <p>
+                                            </p><p>Подивимося, що таке гілки на практиці.</p>
+
+                                            <p>Створимо тут нову гілку з ім'ям coolFeature</p>
+                                            <p></p>
+                                        </div>
+
+                                        <div class="command center">
+                                            <p class="uiButton uiButtonYellow transitionOpacity">
+                                                git branch coolFeature
+                                            </p>
+                                        </div>
+
+                                        <div class="afterText transitionOpacity">
+                                            <p>
+                                            </p><p>От і все! Гілка coolFeature тепер вказує на Комміт C1.</p>
+                                            <p></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="visHolder box vertical flex1">
+                                        <div class="visHolderInside box flex1">
+                                            <img height="400" src="/Assets/branch-tree-2.png" />
+                                        </div>
+                                    </div>
+                                </div><div class="leftRightView box horizontal center">
+
+
+                                    <div class="box left">
+                                        <i class="icon-circle-arrow-left" onclick="window.location.href='/TasksInfo/Task2Info1'"></i>
+
+                                    </div>
+                                    <div class="box right">
+
+                                        <i class="icon-circle-arrow-right" onclick="window.location.href='/TasksInfo/Task2Info3'"></i>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

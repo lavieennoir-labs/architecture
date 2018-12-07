@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Віртуальна лабораторія GIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/main.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/font-awesome.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/rainbows.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/admin.css" type="text/css" charset="utf-8">
+</head>
+<body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-6 col-md-5 col-lg-4 mr-0" href="/Home/Student">Віртуальна лабораторія GIT</a>
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Пошук" aria-label="Пошук">
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="/Home/Index">Вихід</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="modalView box horizontal center transitionOpacityLinear inFront show">
+        <div class="contentHolder box vertical center flex1">
+            <div class="modalTerminal box flex1">
+                <div class="terminal-window box horizontal flex3 transitionAll">
+                    <div class="terminal-window-holder box flex10 vertical transitionTransform">
+                        <div class="wrapper box vertical fullscreen">
+                            <div class="toolbar box vertical center">
+                                <div class="controls box horizontal justify">
+                                    <div class="box flex1">
+                                        <div class="close">
+                                        </div>
+                                    </div>
+                                    <div class="box flex1">
+                                        <div class="minimize">
+                                        </div>
+                                    </div>
+                                    <div class="box flex1">
+                                        <div class="plus">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="inside centered">
+                                <div><p>Час спробувати! Після того, як це вікно закриється, зроби два коміта, щоб пройти цей рівень.</p></div><div class="leftRightView box horizontal center">
+
+                                    <div class="box right">
+                                        <i class="icon-ok exit" onclick="window.location.href='/Tasks/Input'"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

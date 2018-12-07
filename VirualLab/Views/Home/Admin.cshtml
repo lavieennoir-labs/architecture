@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Віртуальна лабораторія GIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/main.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/font-awesome.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/rainbows.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/admin.css" type="text/css" charset="utf-8">
+</head>
+<body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-6 col-md-5 col-lg-4 mr-0" href="#">Віртуальна лабораторія GIT</a>
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Пошук" aria-label="Пошук">
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="/Home/AdminLogin">Вихід</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <span data-feather="home"></span>
+                                Завдання <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file"></span>
+                                Результати
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="shopping-cart"></span>
+                                Студенти
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Особистий кабінет
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Завдання</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group mr-2">
+                            <button class="btn btn-sm btn-outline-secondary">Експортувати</button>
+                            <button class="btn btn-sm btn-outline-secondary">Імпортувати</button>
+                        </div>
+                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            <span data-feather="calendar"></span>
+                            Цього тижня
+                        </button>
+                    </div>
+                </div>
+                <div class="album py-5">
+                    <div class="container">
+
+                        <div class="row">
+
+
+                            <div class="col-lg-4 col-md-6 col-xs-12">
+                                <div class="card mb-4 box-shadow">
+                                    <h4 class="card-img-top px-3 pt-3" style="color:#333;">
+                                        Добре підібране введення в основні команди git
+                                        </h4>
+                                        <div class="card-body">
+                                            <p class="card-text" style="color:#333;">
+                                                1: Знайомство с Git Commit
+                                                <br>
+                                                2: Розгалудження у гіт
+                                                <br>
+                                                3: Злиття гілок
+                                                <br>
+                                                ...
+                                            </p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Деталі</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Змінити</button>
+                                                </div>
+                                                <small class="text-muted">9 хв. тому</small>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-xs-12">
+                                <div class="card mb-4 box-shadow">
+                                    <h4 class="card-img-top px-3 pt-3" style="color:#333;">
+                                        Наступна порція класних git-команд.
+                                        </h4>
+                                        <div class="card-body">
+                                            <p class="card-text" style="color:#333;">
+                                                1: Втрачаємо голову або detached HEAD
+                                                <br>
+                                                2: Розгалудження у гіт
+                                                <br>
+                                                3: Злиття гілок
+                                                <br>
+                                                ...
+                                            </p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Деталі</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Змінити</button>
+                                                </div>
+                                                <small class="text-muted">12 хв. тому</small>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-xs-12">
+                                <div class="card mb-4 box-shadow">
+                                    <h4 class="card-img-top px-3 pt-3" style="color:#333;">
+                                        Не соромтесь змінювати історію
+                                        </h4>
+                                        <div class="card-body">
+                                            <p class="card-text" style="color:#333;">
+                                                1: Вступ в Cherry-pick
+                                            </p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Деталі</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Змінити</button>
+                                                </div>
+                                                <small class="text-muted">14 хв. тому</small>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-xs-12">
+                                <div class="card mb-4 box-shadow">
+                                    <h4 class="card-img-top px-3 pt-3" style="color:#333;">
+                                        Асорті з прийомів работи з Git, хитрощів і порад
+                                        </h4>
+                                        <div class="card-body">
+                                            <p class="card-text" style="color:#333;">
+                                                1: Оберемо один коміт.
+                                                <br>
+                                                2: Розгалудження у гіт
+                                                <br>
+                                                3: Злиття гілок
+                                                <br>
+                                                ...
+                                            </p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Деталі</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Змінити</button>
+                                                </div>
+                                                <small class="text-muted">14 хв. тому</small>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-xs-12">
+                                <div class="card mb-4 box-shadow">
+                                    <h4 class="card-img-top px-3 pt-3" style="color:#333;">
+                                        Якщо ти сміливий, спритний, вправний – потренуйся тут
+                                        </h4>
+                                        <div class="card-body">
+                                            <p class="card-text" style="color:#333;">
+                                                1: Rebase over 9000 раз
+                                                <br>
+                                                2: Розгалудження у гіт
+                                                <br>
+                                                3: Злиття гілок
+                                                <br>
+                                                ...
+                                            </p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Деталі</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Змінити</button>
+                                                </div>
+                                                <small class="text-muted">16 хв. тому</small>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

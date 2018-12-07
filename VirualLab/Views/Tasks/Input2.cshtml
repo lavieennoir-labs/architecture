@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Віртуальна лабораторія GIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/main.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/font-awesome.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/rainbows.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/Content/Custom/admin.css" type="text/css" charset="utf-8">
+</head>
+<body data-gr-c-s-loaded="true" style="cursor: auto;overflow-y: hidden;">
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-6 col-md-5 col-lg-4 mr-0" href="/Home/Student">Віртуальна лабораторія GIT</a>
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Пошук" aria-label="Пошук">
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="/Home/Index">Вихід</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="interfaceWrapper" class="box horizontal flex1">
+        <div id="controls" class="box vertical flex1 visBackgroundColor">
+            <div id="commandLineHistory" class="box vertical flex3">
+                <div class="toolbar box vertical center">
+                    <div class="controls box horizontal justify">
+                        <div class="box flex1">
+                            <div class="close">
+                            </div>
+                        </div>
+                        <div class="box flex1">
+                            <div class="minimize">
+                            </div>
+                        </div>
+                        <div class="box flex1">
+                            <div class="plus">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <i class="icon-home"></i>
+                        <span id="lesson-name" class="vcs-mode-aware intl-aware" data-intl="learn-git-branching">Вітвлення у GIT</span>
+                    </div>
+                </div>
+                <div id="levelToolbarMount">
+                    <div class="toolbar level-toolbar box vertical center transitionAll " data-reactid=".2">
+                        <div class="clearfix" data-reactid=".2.0">
+                            <div class="levelNameWrapper" data-reactid=".2.0.0">
+                                <i class="icon-bolt" data-reactid=".2.0.0.0"></i>
+                                <span data-reactid=".2.0.0.1"> Рівень </span>
+                                <span class="levelToolbarSpan" data-reactid=".2.0.0.2">Вітвлення у GIT</span>
+                            </div>
+                        </div>
+                        <div style="margin-bottom:8px" data-reactid=".2.1">
+                            <div class="showGoalWrapper" data-reactid=".2.1.0">
+                                <button type="button" style="cursor:pointer; font-size: 1rem;" onclick="window.location.href='/Tasks/Goal2'" data-reactid=".2.1.0.0">Ціль рівня</button>
+                            </div>
+                            <div class="showObjectiveWrapper" data-reactid=".2.1.1">
+                                <button id="check-btn" disabled type="button" style="cursor:pointer; font-size: 1rem;" onclick="checkTask()" data-reactid=".2.1.1.0">Перевірити виконання</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="terminal" class="box flex1 horizontal startAlign" onclick="document.getElementById('command-input').focus(); return false;">
+                    <div id="commandDisplay" class="box vertical flex1">
+                        <div data-reactid=".1">
+                            <div id="command" class="reactCommandView" data-reactid=".1.$c45">
+                                <p class="finished commandLine transitionBackground" data-reactid=".1.$c45.0">
+                                </p>
+                                <div class="commandLineResult" data-reactid=".1.$c45.1">
+                                    <p data-reactid=".1.$c45.1.$paragraph_0">
+                                        Створи нову гілку за допомогою "git branch [name]" і перейди на неї за допомогою "git checkout [name]"
+                                    </p>
+                                </div>
+                                <div class="commandLineWarnings" data-reactid=".1.$c45.2">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="commandLineBar" class="box vertical flex0" onclick="document.getElementById('command-input').focus(); return false;">
+                    <div id="prompt" class="">
+                        <span class="promptSign box">$</span>
+                        <span class="cursor box">&nbsp;</span>
+                        <p class="command">
+                            <input type="text" id="command-input" style="all:unset;width: 90%;" />
+                            <button type="submit" style="display:none"></button>
+                            <span class="commandCursor"></span><span>					&nbsp;</span>
+                        </p>
+                    </div>
+                    <textarea autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="commandTextField">					</textarea>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="mainVisSpace" class="box flex2 horizontal transitionAll visBackgroundColor">
+            <span class="modeText transitionOpacity gitMode">
+                Git
+            </span>
+            <span class="modeText transitionOpacity hgMode">
+                Hg
+            </span>
+        </div>
+
+        <div id="goalPlaceholder" class="box flex1 visBackgroundColor" style="display: none;"></div>
+
+    </div>
+
+    <div id="canvasHolder">
+        <svg height="599" version="1.1" width="965" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: absolute; right: 0; top: 56px; opacity: 1;max-width:55%">
+            <path fill="#333333" stroke="#333333" d="M250,192C250,142,250,95,250,45L242,53L258,53L250,45C250,95,250,142,250,192" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); stroke-linecap: round; stroke-linejoin: round; opacity: 1;" opacity="1"></path>
+            <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc>
+            <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+            <circle cx="249.5" cy="25.5" r="17" fill="#ff66af" stroke="#ffffff" opacity="1" stroke-width="2" stroke-dasharray="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1;"></circle>
+            <text x="249.5" y="25.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 12px Monaco, Courier, font-monospace; opacity: 1;" font-size="12px" font-weight="bold" font-family="Monaco, Courier, font-monospace" opacity="1"><tspan dy="2.8125" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">C0</tspan></text>
+            <circle cx="249.5" cy="208.60000610351562" r="17" fill="#ff66af" stroke="#ffffff" opacity="1" stroke-width="2" stroke-dasharray="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1;"></circle>
+            <text x="249.5" y="208.60000610351562" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 12px Monaco, Courier, font-monospace; opacity: 1;" font-size="12px" font-weight="bold" font-family="Monaco, Courier, font-monospace" opacity="1"><tspan dy="2.803131103515625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">C1</tspan></text>
+            <path fill="#ff66af" stroke="#ffffff" d="M323,201L274,201L274,195L260,209L274,223L274,217L323,217Z" opacity="1" transform="matrix(0.8192,-0.5736,0.5736,0.8192,-69.1603,184.9948)" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer;"></path>
+            <rect x="285.8515625" y="160.60000610351562" width="68.796875" height="54" r="8" rx="8" ry="8" fill="#ff66af" stroke="#ffffff" opacity="1" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer;"></rect>
+            <text x="320.25" y="175.60000610351562" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 14px Monaco, Courier, font-monospace; opacity: 1; cursor: pointer;" font-size="14px" font-family="Monaco, Courier, font-monospace" opacity="1"><tspan dy="4.006256103515625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">master</tspan></text>
+            <path fill="#ff668d" stroke="#ffffff" d="M323,201L274,201L274,195L260,209L274,223L274,217L323,217Z" opacity="0" transform="matrix(0.8192,-0.5736,0.5736,0.8192,-69.1603,184.9948)" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0; cursor: pointer;"></path>
+            <rect x="285.8515625" y="180.60000610351562" width="68.796875" height="54" r="8" rx="8" ry="8" fill="#ff668d" stroke="#ffffff" opacity="0" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0; cursor: pointer;"></rect>
+            <path fill="#2831ff" stroke="#ffffff" d="M177,201L226,201L226,195L240,209L226,223L226,217L177,217Z" opacity="0" transform="matrix(0.8192,-0.5736,0.5736,0.8192,-80.1707,177.3879)" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0; cursor: auto;"></path>
+            <rect x="156.75" y="228.60000610351562" width="44" height="27.6" r="8" rx="8" ry="8" fill="#2831ff" stroke="#ffffff" opacity="0" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0; cursor: auto;"></rect>
+            <text x="178.75" y="241.60000610351562" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 14px Monaco, Courier, font-monospace; opacity: 0; cursor: auto;" font-size="14px" font-family="Monaco, Courier, font-monospace" opacity="0"><tspan dy="4.006256103515625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">HEAD</tspan></text>
+            <text x="320.25" y="195.60000610351562" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 14px Monaco, Courier, font-monospace; opacity: 1; cursor: pointer;" font-size="14px" font-family="Monaco, Courier, font-monospace" opacity="1"><tspan dy="4.006256103515625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">bugFix*</tspan></text>
+        </svg>
+        <svg height="599" version="1.1" width="965" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: absolute; right: 0; top: 56px; opacity: 0; visibility: hidden;">
+            <path fill="#333333" stroke="#333333" d="M483,78C483,28,483,95,483,45L475,53L491,53L483,45C483,95,483,28,483,78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); stroke-linecap: round; stroke-linejoin: round; opacity: 1;" opacity="1"></path>
+            <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc>
+            <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+            <circle cx="482.5" cy="25.5" r="17" fill="#ff66d2" stroke="#ffffff" opacity="1" stroke-width="2" stroke-dasharray="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer;"></circle>
+            <text x="482.5" y="25.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 12px Monaco, Courier, font-monospace; opacity: 1; cursor: pointer;" font-size="12px" font-weight="bold" font-family="Monaco, Courier, font-monospace" opacity="1"><tspan dy="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">C0</tspan></text>
+            <circle cx="482.5" cy="95.28571428571428" r="17" fill="#ff66d2" stroke="#ffffff" opacity="1" stroke-width="2" stroke-dasharray="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer;"></circle>
+            <text x="482.5" y="95.28571428571428" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 12px Monaco, Courier, font-monospace; opacity: 1; cursor: pointer;" font-size="12px" font-weight="bold" font-family="Monaco, Courier, font-monospace" opacity="1"><tspan dy="3.0044642857142776" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">C1</tspan></text>
+            <path fill="#ff66d2" stroke="#ffffff" d="M556,87L507,87L507,81L493,95L507,109L507,103L556,103Z" opacity="1" transform="matrix(0.8192,-0.5736,0.5736,0.8192,38.365,298.0214)" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer;"></path>
+            <rect x="518.3515625" y="47.28571428571428" width="69.796875" height="32" r="8" rx="8" ry="8" fill="#ff66d2" stroke="#ffffff" opacity="1" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer;"></rect>
+            <text x="553.25" y="62.28571428571428" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 14px Monaco, Courier, font-monospace; opacity: 1; cursor: pointer;" font-size="14px" font-family="Monaco, Courier, font-monospace" opacity="1"><tspan dy="4.004464285714278" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">master*</tspan></text>
+            <path fill="#2831ff" stroke="#ffffff" d="M410,87L459,87L459,81L473,95L459,109L459,103L410,103Z" opacity="0" transform="matrix(0.8192,-0.5736,0.5736,0.8192,27.3546,290.4146)" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0; cursor: auto;"></path>
+            <rect x="389.6484375" y="115.28571428571428" width="44.203125" height="27.6" r="8" rx="8" ry="8" fill="#2831ff" stroke="#ffffff" opacity="0" stroke-dasharray="0" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0; cursor: auto;"></rect>
+            <text x="411.75" y="128.28571428571428" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 14px Monaco, Courier, font-monospace; opacity: 0; cursor: auto;" font-size="14px" font-family="Monaco, Courier, font-monospace" opacity="0"><tspan dy="4.004464285714278" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">HEAD</tspan></text>
+        </svg>
+    </div>
+
+    <div id="reactMount">
+    </div>
+
+
+    <script src="/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="/Scripts/popper.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/Custom/input.js"></script>
+</body>
+</html>
