@@ -9,5 +9,6 @@ namespace VirualLab.Models
     {
         public string TaskName { get; set; }
         public List<string> Commands { get; set; }
+        public string Reference { get; set; }
     }
 }

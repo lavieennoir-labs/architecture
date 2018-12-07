@@ -13,7 +13,7 @@ namespace VirualLab.Services
             userAnswer.Commands = userAnswer.Commands[0].Split(',').ToList();
             var taskAnswers = GetTaskAnswers(userAnswer.TaskName);
             var analyseResult = AnalyseAnswer(userAnswer.Commands, taskAnswers, userAnswer.TaskName);
-            var isAnswerEqualEtalon = analyseResult.Percentage == 100;
+            var isAnswerEqualEtalon = analyseResult.Percentage == 1;
 
             return new TaskResultsModel
             {
@@ -21,7 +21,8 @@ namespace VirualLab.Services
                 PercentageOfCorrectCommands = Math.Round(analyseResult.Percentage, 4) * 100,
                 AnswerCommandsCount = userAnswer.Commands.Count,
                 CorrectComandsCount = taskAnswers.Count,
-                Advice = isAnswerEqualEtalon ? string.Empty : GetAdvice(analyseResult.CorrectCommandsCount, taskAnswers.Count) 
+                Advice = isAnswerEqualEtalon ? string.Empty : GetAdvice(userAnswer.Commands.Count, taskAnswers.Count),
+                Reference = userAnswer.Reference
             };
         }
 
@@ -39,64 +40,27 @@ namespace VirualLab.Services
             {
                 return new List<string>
                 {
-                    "git branch",
-                    "git checkout",
+                    "git branch bugfix",
+                    "git checkout bugfix",
                 };
             }
         }
 
         private AnalyseModel AnalyseAnswer(List<string> answers, List<string> correctAnswers, string taskName)
         {
-            if (taskName == "Вивчаємо розгалудження у GIT")
+            var tmpAnswers = new List<string>(answers);
+            tmpAnswers.RemoveAll(elem => !correctAnswers.Contains(elem));
+            var tmpCorrect = new List<string>(correctAnswers);
+            tmpCorrect.RemoveAll(elem => !tmpAnswers.Contains(elem));
+            var correctCommandsCount = tmpAnswers.Zip(correctAnswers, (a, b) => new { a, b }).Where(x => x.a == x.b).Count();
+            var percentage = correctCommandsCount / (double)Math.Max(answers.Count, correctAnswers.Count);
+            
+            return new AnalyseModel
             {
-                int correctCommandsCount = 0;
-                double percentage = 0.0;
-                if (answers.Count <= correctAnswers.Count)
-                {
-                    correctCommandsCount = answers.Count(elem => elem.StartsWith("git commit"));
-                    percentage = correctCommandsCount / 2.0 * 100;
-                }
-                else
-                {
-                    var answerPercentage = correctAnswers.Count / (double)answers.Count;
-                    correctCommandsCount += answers[0].StartsWith("git commit") ? 1 : 0;
-                    correctCommandsCount += answers[1].StartsWith("git commit") ? 1 : 0;
-                    percentage = correctCommandsCount * answerPercentage - (answers.Count - correctCommandsCount) * answerPercentage;
-                }
-
-                return new AnalyseModel
-                {
-                    CorrectCommandsCount = correctCommandsCount,
-                    WrongCommandsCount = answers.Count - correctCommandsCount,
-                    Percentage = percentage
-                };
-            }
-            else
-            {
-                int correctCommandsCount = 0;
-                double percentage = 0.0;
-                if (answers.Count <= correctAnswers.Count)
-                {
-                    correctCommandsCount += answers[0].StartsWith("git branch") ? 1 : 0;
-                    correctCommandsCount += answers[1].StartsWith("git checkout") ? 1 : 0;
-                    percentage = correctCommandsCount / 2.0 * 100;
-                }
-                else
-                {
-                    var answerPercentage = correctAnswers.Count / (double)answers.Count;
-                    correctCommandsCount += answers[0].StartsWith("git branch") ? 1 : 0;
-                    correctCommandsCount += answers[1].StartsWith("git checkout") ? 1 : 0;
-                    percentage = correctCommandsCount * answerPercentage - (answers.Count - correctCommandsCount) * answerPercentage;
-                }
-
-                return new AnalyseModel
-                {
-                    CorrectCommandsCount = correctCommandsCount,
-                    WrongCommandsCount = answers.Count - correctCommandsCount,
-                    Percentage = percentage
-                };
-
-            }
+                CorrectCommandsCount = correctCommandsCount,
+                WrongCommandsCount = answers.Count - correctCommandsCount,
+                Percentage = percentage
+            };
         }
 
         private string GetAdvice(int correctAnswers, int etalonAnswers)

@@ -9,8 +9,8 @@ let commands = [];
     //send request to check task result
     //change according to backend
     function checkTask() {
-      let commandStrings = commands.map((commandData) => commandData.command);
-      post('/Tasks/Check', {TaskName: lessonName, Commands : commandStrings}, "get");
+        let commandStrings = commands.map((commandData) => commandData.command);
+        post('/Tasks/Check', { TaskName: lessonName, Commands: commandStrings, Reference: window.location.href }, "get");
     }
 
     // focus input on terminal click
@@ -35,7 +35,7 @@ let commands = [];
     });
 
     function deleteCommand(idx) {
-      $("#command_" + idx + " i.icon-exclamation-sign").tooltip('hide');      
+      //$("#command_" + idx + " i.icon-exclamation-sign").tooltip('hide');      
       $("#command_" + idx).remove();
       
       for(let i = 0; i < commands.length; i++) {
@@ -74,7 +74,7 @@ let commands = [];
       if(commands.length > 0)
         $("#check-btn").prop("disabled", false);
       localStorage["commands"] = JSON.stringify(commands);
-      $('[data-toggle="tooltip"]').tooltip();   
+      //$('[data-toggle="tooltip"]').tooltip();   
     }
     
     function isCommandValid(commandText) {

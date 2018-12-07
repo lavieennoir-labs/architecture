@@ -12,5 +12,6 @@ namespace VirualLab.Models
         public int AnswerCommandsCount { get; set; }
         public int CorrectComandsCount { get; set; }
         public string Advice { get; set; }
+        public string Reference { get; set; }
     }
 }
